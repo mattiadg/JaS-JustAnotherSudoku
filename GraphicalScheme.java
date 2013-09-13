@@ -225,6 +225,21 @@ public class GraphicalScheme extends JFrame
     	}
     }
     /**
+     * Operation
+     * Annulla l'ultima mossa effettuata
+     */
+    public void cancel( )
+    {
+    	Coord c = scheme.cancel();
+    	squares[c.getRow()-1][c.getCol()-1].setText( scheme.getSquare( c.getRow(), c.getCol() ) + "" );
+    }
+    
+    public void redo( )
+    {
+    	Coord c = scheme.redo();
+    	squares[c.getRow()-1][c.getCol()-1].setText( scheme.getSquare( c.getRow(), c.getCol() ) + "" );
+    }
+    /**
      * Handler degli eventi di tastiera
      */
     private class KeyHandler implements KeyListener

@@ -90,6 +90,25 @@ public class Menu extends JMenuBar
     			
     			
     		});
+    	undo.addActionListener(
+    		new ActionListener()	//Classe inner anonima
+    		{
+    			//Annulla l'ultima mossa fatta
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					parent.cancel();					
+				}
+    			
+    		});
+    	redo.addActionListener(
+        		new ActionListener()	//Classe inner anonima
+        		{
+        			//Ripete l'ultima mossa annullata
+    				@Override
+    				public void actionPerformed(ActionEvent arg0) {
+    					parent.redo();					
+    				}
+        		});
 	}
 }
 

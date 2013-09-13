@@ -74,22 +74,24 @@ public class Scheme
      *
      * @return Move
      */
-    public void cancel (  )
+    public Coord cancel (  )
     {
     	Move nuova;
         nuova = mosse.cancelMove();
         setSquare(nuova.getRow(), nuova.getCol(), nuova.getPrevVal());
+        return new Coord( nuova.getRow() - 1, nuova.getCol() - 1 );
     }
     /**
      * Operation
      *
      * @return Move
      */
-    public void redo (  )
+    public Coord redo (  )
     {
     	Move nuova;
         nuova = mosse.redoMove();
         setSquare(nuova.getRow(), nuova.getCol(), nuova.getNewVal());
+        return new Coord( nuova.getRow(), nuova.getCol() );
     }
     /**
      * Operation
