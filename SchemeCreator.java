@@ -29,8 +29,6 @@ public class SchemeCreator
     {
     	Scheme sch = new Scheme();		//Scheme da restituire
     	Scanner input = null;			//Usato per leggere dal file
-    	Move list = null;				//Lista di mosse usata per inizializzare ExecutionStack
-    	Move next = null;				//Puntatore a Move usato per memorizzare le mosse lette
     	char[] buffer = new char[9];	//Buffer dove posizionare le righe del sudoku lette dal file
     	
     	int row, col;					//Valori della lista delle mosse
@@ -77,6 +75,7 @@ public class SchemeCreator
     		{
     			row = input.nextInt();
     			col = input.nextInt();
+    			prev = input.next().toCharArray()[0];
     			act = input.next().toCharArray()[0];
     
     			sch.playMove(row, col, act);

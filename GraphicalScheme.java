@@ -83,6 +83,8 @@ public class GraphicalScheme extends JFrame
     		}
     	}
     	add( bigPanel );	
+    	//bigPanel.setBackground(Color.BLACK);
+    	bigPanel.setVisible( false );
     }
     /**
      * 
@@ -231,13 +233,30 @@ public class GraphicalScheme extends JFrame
     public void cancel( )
     {
     	Coord c = scheme.cancel();
-    	squares[c.getRow()-1][c.getCol()-1].setText( scheme.getSquare( c.getRow(), c.getCol() ) + "" );
+    	char val = scheme.getSquare( c.getRow() + 1, c.getCol() + 1 );
+    	if( val != '@')
+    	{
+    		squares[c.getRow()][c.getCol()].setText(  val + "" );
+    	}
+    	else
+    	{
+    		squares[c.getRow()][c.getCol()].setText( "" );
+    	}
+    	
     }
     
     public void redo( )
     {
     	Coord c = scheme.redo();
     	squares[c.getRow()-1][c.getCol()-1].setText( scheme.getSquare( c.getRow(), c.getCol() ) + "" );
+    }
+    /**
+     * Operation
+     * Rende visibile lo schema
+     */
+    public void show( )
+    {
+    	bigPanel.setVisible( true );
     }
     /**
      * Handler degli eventi di tastiera
