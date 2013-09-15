@@ -128,23 +128,6 @@ public class Scheme
     		return false;
     	}
     }
-    /**Operation
-     * 
-     * @param list
-     * 
-     * Crea un nuovo ExecutionStack
-     */
-    public void createExecutionStack( Move list )
-    {
-    	Move tmp;
-    	mosse = new ExecutionStack ( list );
-    	tmp = mosse.iterator();
-    	while(tmp != null)
-    	{
-    		setSquare( tmp.getRow(), tmp.getCol(), tmp.getNewVal() );
-    		tmp = tmp.getNext();
-    	}
-    }
     /**
      * Operation
      *

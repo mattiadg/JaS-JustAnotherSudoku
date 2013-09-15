@@ -77,19 +77,9 @@ public class SchemeCreator
     		{
     			row = input.nextInt();
     			col = input.nextInt();
-    			prev = input.next().toCharArray()[0];
     			act = input.next().toCharArray()[0];
-    			
-    			if(list == null)
-    			{
-    				list = new Move(row, col, prev, act);
-    				next = list;
-    			}
-    			else
-    			{
-    				next.setNext( new Move(row, col, prev, act));
-    				next = next.getNext();
-    			}
+    
+    			sch.playMove(row, col, act);
     		}
     	}catch( NoSuchElementException noSuchElementException)
     	{
@@ -108,7 +98,7 @@ public class SchemeCreator
     		input.close();
     	
     	/*Crea l'ExecutionStack a partire da list*/
-    	sch.createExecutionStack(list);
+    	sch.print();
     	
     	return sch;
     }

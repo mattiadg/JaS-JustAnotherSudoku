@@ -58,7 +58,7 @@ public class ExecutionStack
     	else
     	{
     		last.setNext(move);
-    		last.getNext().setPrevious(last);
+    		move.setPrevious(last);
     		last = move;
     	}
     }
@@ -112,11 +112,13 @@ public class ExecutionStack
     public void print()
     {
     	Move tmp = first;
+    	System.out.println("first="+first.getRow()+" "+first.getCol()+" "+first.getPrevVal()+" "+first.getNewVal()+" "+first.getPrevious());
     	while( tmp != null )
     	{
-    		System.out.println(tmp.getRow() + " " + tmp.getCol() + " " + tmp.getPrevVal() + " " + tmp.getNewVal() );
+    		System.out.println(tmp.getRow() + " " + tmp.getCol() + " " + tmp.getPrevVal() + " " + tmp.getNewVal() + " " + tmp.getPrevious() );
     		tmp = tmp.getNext();
     	}
+    	System.out.println("last="+last.getRow()+" "+last.getCol()+" "+last.getPrevVal()+" "+last.getNewVal()+" " + last.getPrevious());
     }
      
     /**Operation
