@@ -83,8 +83,6 @@ public class GraphicalScheme extends JFrame
     		}
     	}
     	add( bigPanel );	
-    	//bigPanel.setBackground(Color.BLACK);
-    	bigPanel.setVisible( false );
     }
     /**
      * 

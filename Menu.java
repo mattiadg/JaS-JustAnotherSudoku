@@ -70,7 +70,7 @@ public class Menu extends JMenuBar
     				{
     					parent.scheme = SchemeCreator.loadFromFile( chooser.getName( chooser.getSelectedFile() ));
     					parent.initializeScheme();
-    					parent.show( );
+    					parent.show();
     				}
     			}
     		});
