@@ -252,10 +252,10 @@ public class GraphicalScheme extends JFrame
      * Operation
      * Rende visibile lo schema
      */
-    public void show( )
+    /* public void show( )
     {
     	bigPanel.setVisible( true );
-    }
+    }*/
     /**
      * Handler degli eventi di tastiera
      */
